@@ -10,15 +10,14 @@ export function register<T extends object>(name: string, factory: Factory<T>): v
 export function get<T extends object>(name: string): Factory<T> {
   const factory = registry.get(name);
   if (!factory) {
-    throw new Error(`Factory "${name}" not registered. Available: ${[...registry.keys()].join(', ')}`);
+    throw new Error(
+      `Factory "${name}" not registered. Available: ${[...registry.keys()].join(', ')}`,
+    );
   }
   return factory as Factory<T>;
 }
 
-export function build<T extends object>(
-  name: string,
-  overrides?: Partial<T>,
-): T {
+export function build<T extends object>(name: string, overrides?: Partial<T>): T {
   return get<T>(name).build(overrides);
 }
 

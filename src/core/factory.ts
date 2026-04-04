@@ -33,7 +33,9 @@ export class Factory<T extends object> {
   buildWith(traitName: string, overrides?: DeepPartial<T>): T {
     const trait = this.traits[traitName];
     if (!trait) {
-      throw new Error(`Unknown trait: "${traitName}". Available: ${Object.keys(this.traits).join(', ')}`);
+      throw new Error(
+        `Unknown trait: "${traitName}". Available: ${Object.keys(this.traits).join(', ')}`,
+      );
     }
     const base = this.defaultsFn();
     const traitOverrides = trait(base);
@@ -63,9 +65,7 @@ export class Factory<T extends object> {
     this.sequences.clear();
   }
 
-  extend<U extends object>(
-    config: FactoryConfig<U>,
-  ): Factory<T & U> {
+  extend<U extends object>(config: FactoryConfig<U>): Factory<T & U> {
     const parentDefaults = this.defaultsFn;
     const childDefaults = config.defaults;
     const mergedTraits = { ...this.traits, ...config.traits } as Record<string, TraitFn<T & U>>;
