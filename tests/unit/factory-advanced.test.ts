@@ -159,11 +159,6 @@ describe('Factory — extend', () => {
     createdAt: string;
   }
 
-  interface ExtendedEntity extends BaseEntity {
-    name: string;
-    role: string;
-  }
-
   it('should extend factory with additional defaults', () => {
     const baseFactory = define<BaseEntity>({
       defaults: () => ({ id: 1, createdAt: '2026-01-01' }),
