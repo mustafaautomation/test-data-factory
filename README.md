@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/mustafaautomation/test-data-factory/actions/workflows/ci.yml/badge.svg)](https://github.com/mustafaautomation/test-data-factory/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6.svg?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6.svg?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 
 Type-safe test data factory library for TypeScript. Build complex, realistic test data with minimal boilerplate. Inspired by FactoryBot (Ruby) and Fishery (TypeScript).
 
